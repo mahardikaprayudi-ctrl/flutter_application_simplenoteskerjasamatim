@@ -1,6 +1,6 @@
-class Note{
-  String title;
-  String description;
+class Note {
+  final String title;
+  final String description;
 
-  Note(this.title, this.description);
+  Note({required this.title,required this.description,});
 }
