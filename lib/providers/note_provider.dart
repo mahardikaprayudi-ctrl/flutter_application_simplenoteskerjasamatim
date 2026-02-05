@@ -1,27 +1,20 @@
 import 'package:flutter/material.dart';
-
-class Note {
-  final String title;
-  final String description;
-
-  Note({
-    required this.title,
-    required this.description,
-  });
-}
+import 'package:notepad/models/note.dart';
 
 class NoteProvider extends ChangeNotifier {
   final List<Note> _notes = [];
 
+  // getter
   List<Note> get notes => _notes;
 
+  // tambah note
   void addNote(String title, String description) {
-    _notes.add(
-      Note(
-        title: title,
-        description: description,
-      ),
+    final note = Note(
+      title: title,
+      description: description,
     );
+
+    _notes.add(note);
     notifyListeners();
   }
 }
